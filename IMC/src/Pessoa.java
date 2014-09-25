@@ -1,4 +1,7 @@
 
+import java.text.DecimalFormat;
+
+
 public class Pessoa {
     public String sexo;
     public double peso;
@@ -33,47 +36,59 @@ public class Pessoa {
     
     public double calculaImc(double peso, double altura){
         double imc;
-        imc = peso/Math.pow(altura, 2);
+        imc = 10000*(peso/Math.pow(altura, 2));
         
         return imc;
     }
     
     public void exibeResultado(String sexo, double peso, double altura){
+        DecimalFormat df = new DecimalFormat("##.#");
         double imc = this.calculaImc(peso, altura);
+        String fd;
         
         if(sexo.equalsIgnoreCase("Mulher")){
             if(imc<15){
-                System.out.println("IMC: "+imc+" Procure um médico, você vai morrer");
+                fd = df.format(imc);
+                System.out.println("IMC: "+fd+" Procure um médico, você vai morrer");
             }
             if(imc>=15 && imc<18){
-                System.out.println("IMC: "+imc+" Você está abaixo do peso recomendado!");
+                fd = df.format(imc);
+                System.out.println("IMC: "+fd+" Você está abaixo do peso recomendado!");
             }
             if(imc>=18 && imc<24.5){
-                System.out.println("IMC: "+imc+" Você está muito bem! Continue assim!");            
+                fd = df.format(imc);
+                System.out.println("IMC: "+fd+" Você está muito bem! Continue assim!");            
             }
             if(imc>=24.5 && imc<27.3){
-                System.out.println("IMC: "+imc+" Você está acima do peso recomendado. Cuidado!");
+                fd = df.format(imc);
+                System.out.println("IMC: "+fd+" Você está acima do peso recomendado. Cuidado!");
             }
             if(imc>=27.3){
-                System.out.println("IMC: "+imc+" Você está Obeso. Procure o acompanhamento de um nutricionista e realizar mais atividades físicas!");
+                fd = df.format(imc);
+                System.out.println("IMC: "+fd+" Você está Obeso. Procure o acompanhamento de um nutricionista e realizar mais atividades físicas!");
             }
         }
         
         if(sexo.equalsIgnoreCase("Homem")){
             if(imc<17.9){
-                System.out.println("IMC: "+imc+" Procure um médico, você vai morrer");
+                fd = df.format(imc);
+                System.out.println("IMC: "+fd+" Procure um médico, você vai morrer");
             }
             if(imc>=17.9 && imc<19){
-                System.out.println("IMC: "+imc+" Você está abaixo do peso recomendado!");
+                fd = df.format(imc);
+                System.out.println("IMC: "+fd+" Você está abaixo do peso recomendado!");
             }
             if(imc>=19 && imc<25){
-                System.out.println("IMC: "+imc+" Você está muito bem! Continue assim!");            
+                fd = df.format(imc);
+                System.out.println("IMC: "+fd+" Você está muito bem! Continue assim!");            
             }
             if(imc>=25 && imc<27.8){
-                System.out.println("IMC: "+imc+" Você está acima do peso recomendado. Cuidado!");
+                fd = df.format(imc);
+                System.out.println("IMC: "+fd+" Você está acima do peso recomendado. Cuidado!");
             }
             if(imc>=27.8){
-                System.out.println("IMC: "+imc+" Você está Obeso. Procure o acompanhamento de um nutricionista e realizar mais atividades físicas!");
+                fd = df.format(imc);
+                System.out.println("IMC: "+fd+" Você está Obeso. Procure o acompanhamento de um nutricionista e realizar mais atividades físicas!");
             }
         }
     }
