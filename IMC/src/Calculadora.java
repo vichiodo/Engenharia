@@ -16,7 +16,7 @@ public class Calculadora {
         System.out.println("Peso(em kg):");
         peso = s.nextDouble();
         
-        p.exibeResultado(sexo, peso, altura);
+        System.out.println(p.exibeResultado(sexo, peso, altura));
         
     }    
 }
