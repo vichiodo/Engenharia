@@ -1,15 +1,7 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 
 import junit.framework.Assert;
 import org.junit.Test;
 
-/**
- *
- * @author Barbara
- */
 public class PessoaTest {
     
     public PessoaTest() {
